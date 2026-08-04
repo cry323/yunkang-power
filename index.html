@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>云康动力科技有限公司 - 汽车电源与ABS系统解决方案</title>
+    <style>
+        /* ===== 全局重置 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", "PingFang SC", Roboto, "Helvetica Neue", sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== 导航栏 ===== */
+        .navbar {
+            background: #0a1628;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .brand span {
+            color: #f0b429;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: #f0b429;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 6px;
+            margin-left: 10px;
+        }
+
+        .lang-switcher button {
+            background: transparent;
+            border: 1px solid #555;
+            color: #ccc;
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+
+        .lang-switcher button:hover,
+        .lang-switcher button.active {
+            background: #f0b429;
+            border-color: #f0b429;
+            color: #0a1628;
+        }
+
+        /* ===== Hero 区域 ===== */
+        .hero {
+            background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%);
+            color: #fff;
+            padding: 80px 0 70px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: #f0b429;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #b0c4de;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #f0b429;
+            color: #0a1628;
+            padding: 14px 36px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #d49a1e;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid #f0b429;
+            transition: all 0.3s;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            background: #f0b429;
+            color: #0a1628;
+        }
+
+        /* ===== 认证条 ===== */
+        .cert-bar {
+            background: #f8f9fc;
+            padding: 30px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .cert-bar .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1a1a2e;
+        }
+
+        .cert-item .badge {
+            background: #0a1628;
+            color: #f0b429;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* ===== 产品区域 ===== */
+        .products {
+            padding: 70px 0 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #f8f9fc;
+            border-radius: 16px;
+            padding: 40px 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e9ecef;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-icon {
+            font-size: 44px;
+            margin-bottom: 12px;
+        }
+
+        .product-card h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .product-card .sub {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .product-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .product-card ul li {
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 15px;
+        }
+
+        .product-card ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #f0b429;
+            font-weight: 700;
+        }
+
+        .product-card .btn-primary {
+            padding: 10px 28px;
+            font-size: 14px;
+        }
+
+        /* ===== 应用场景 ===== */
+        .applications {
+            background: #f8f9fc;
+            padding: 70px 0 60px;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .app-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px 24px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            transition: box-shadow 0.3s;
+        }
+
+        .app-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .app-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .app-card p {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .app-card a {
+            color: #f0b429;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .app-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== 页脚 ===== */
+        .footer {
+            background: #0a1628;
+            color: #aaa;
+            padding: 50px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .footer a {
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+            padding: 4px 0;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .footer a:hover {
+            color: #f0b429;
+        }
+
+        .footer .copyright {
+            border-top: 1px solid #1a2a4a;
+            padding-top: 24px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* ============================================================ */
+        /* ===== 弹窗样式 ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px 36px 32px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.35s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 28px;
+            color: #999;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .modal-box .qr-icon {
+            font-size: 52px;
+            margin-bottom: 6px;
+        }
+
+        .modal-box h3 {
+            font-size: 20px;
+            margin-bottom: 6px;
+            color: #0a1628;
+        }
+
+        .modal-box .modal-desc {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .modal-box .qr-placeholder {
+            width: 160px;
+            height: 160px;
+            background: #f0f2f5;
+            border: 2px dashed #ccc;
+            border-radius: 12px;
+            margin: 0 auto 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #999;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .modal-box .qr-placeholder .big {
+            font-size: 48px;
+        }
+
+        .modal-box .modal-hint {
+            background: #f8f9fc;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 14px;
+            color: #0a1628;
+            border: 1px solid #e9ecef;
+        }
+
+        .modal-box .modal-hint strong {
+            color: #f0b429;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 900px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar .container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .lang-switcher {
+                margin-left: 0;
+            }
+
+            .hero {
+                padding: 50px 0 40px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cert-bar .container {
+                gap: 16px;
+            }
+
+            .product-card {
+                padding: 28px 20px;
+            }
+
+            .modal-box {
+                padding: 30px 20px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== 导航栏 ===== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="brand">云康动力 <span>ABC</span></a>
+            <ul class="nav-links">
+                <li><a data-key="nav_products" onclick="scrollToSection('products')">产品</a></li>
+                <li><a data-key="nav_apps" onclick="scrollToSection('applications')">应用场景</a></li>
+                <li><a data-key="nav_about" onclick="scrollToSection('about')">关于我们</a></li>
+                <li><a data-key="nav_contact" onclick="scrollToSection('contact')">联系我们</a></li>
+                <li>
+                    <div class="lang-switcher">
+                        <button class="active" onclick="switchLang('zh')">中</button>
+                        <button onclick="switchLang('en')">EN</button>
+                        <button onclick="switchLang('ar')">عربي</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== Hero 区域 ===== -->
+    <section class="hero">
+        <div class="container">
+            <h1><span data-key="hero_title1">汽车电源</span> <span data-key="hero_title2">与 ABS系统</span> <span data-key="hero_title3">解决方案</span></h1>
+            <p data-key="hero_desc">为中东 · 东南亚OEM客户提供高可靠性汽车电子零部件，IATF 16949认证，高温适应性设计</p>
+            <div class="hero-buttons">
+                <a class="btn-primary" data-key="hero_btn1" onclick="scrollToSection('products')">查看产品</a>
+                <a class="btn-outline" data-key="hero_btn2" onclick="scrollToSection('contact')">获取报价</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 认证条 ===== -->
+    <section class="cert-bar">
+        <div class="container">
+            <div class="cert-item"><span class="badge">IATF 16949</span> <span data-key="cert1">汽车行业质量管理体系</span></div>
+            <div class="cert-item"><span class="badge">ISO 14001</span> <span data-key="cert2">环境管理体系</span></div>
+            <div class="cert-item"><span class="badge">ECE R90</span> <span data-key="cert3">ABS制动系统认证</span></div>
+            <div class="cert-item"><span class="badge">ISO 26262</span> <span data-key="cert4">功能安全标准</span></div>
+        </div>
+    </section>
+
+    <!-- ===== 产品区域 ===== -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title" data-key="products_title">我们的产品</h2>
+            <p class="section-sub" data-key="products_sub">为全球OEM客户提供高性能汽车电子零部件</p>
+            <div class="product-grid">
+
+                <!-- 电源产品 -->
+                <div class="product-card">
+                    <div class="product-icon">⚡</div>
+                    <h3 data-key="pwr_title">电源解决方案</h3>
+                    <p class="sub" data-key="pwr_sub">车载DC-DC转换器 · 车载充电机(OBC) · 工业电源模块</p>
+                    <ul>
+                        <li data-key="pwr_li1">工作温度：-40°C ~ 125°C</li>
+                        <li data-key="pwr_li2">转换效率高达 95%</li>
+                        <li data-key="pwr_li3">符合 ISO 26262 功能安全标准</li>
+                        <li data-key="pwr_li4">适用于乘用车/商用车/新能源车</li>
+                    </ul>
+                    <a class="btn-primary" data-key="pwr_btn" onclick="alert('电源产品详情页 - 即将上线')">查看详情 →</a>
+                </div>
+
+                <!-- ABS产品 -->
+                <div class="product-card">
+                    <div class="product-icon">🛞</div>
+                    <h3 data-key="abs_title">ABS防抱死制动系统</h3>
+                    <p class="sub" data-key="abs_sub">乘用车ABS · 商用车ABS · ABS+ESC集成系统</p>
+                    <ul>
+                        <li data-key="abs_li1">响应时间 ≤ 10ms</li>
+                        <li data-key="abs_li2">支持 CAN 总线诊断接口</li>
+                        <li data-key="abs_li3">符合 ECE R90 认证</li>
+                        <li data-key="abs_li4">适配多种车型平台</li>
+                    </ul>
+                    <a class="btn-primary" data-key="abs_btn" onclick="alert('ABS产品详情页 - 即将上线')">查看详情 →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 应用场景 ===== -->
+    <section class="applications" id="applications">
+        <div class="container">
+            <h2 class="section-title" data-key="app_title">应用场景</h2>
+            <p class="section-sub" data-key="app_sub">云康动力电源与ABS系统在各类车型中的协同方案</p>
+            <div class="app-grid">
+                <div class="app-card">
+                    <h3 data-key="app1_title">🚗 乘用车</h3>
+                    <p data-key="app1_desc">为轿车、SUV提供高集成度电源与ABS方案，适配主流车型平台</p>
+                    <a data-key="app1_link" onclick="alert('乘用车应用详情 - 即将上线')">了解更多 →</a>
+                </div>
+                <div class="app-card">
+                    <h3 data-key="app2_title">🚛 商用车</h3>
+                    <p data-key="app2_desc">专为重卡、客车设计的耐久性方案，适应恶劣路况与高温环境</p>
+                    <a data-key="app2_link" onclick="alert('商用车应用详情 - 即将上线')">了解更多 →</a>
+                </div>
+                <div class="app-card">
+                    <h3 data-key="app3_title">🔋 新能源车</h3>
+                    <p data-key="app3_desc">电源产品与再生制动ABS的深度集成，助力绿色出行</p>
+                    <a data-key="app3_link" onclick="alert('新能源车应用详情 - 即将上线')">了解更多 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 关于我们 ===== -->
+    <section id="about" style="padding: 60px 0;">
+        <div class="container" style="text-align: center; max-width: 800px;">
+            <h2 class="section-title" data-key="about_title">关于云康动力</h2>
+            <p style="font-size: 17px; color: #444; margin-bottom: 16px;" data-key="about_p1">
+                云康动力科技有限公司专注于汽车电源系统与主动安全零部件的研发、制造与销售。
+            </p>
+            <p style="font-size: 15px; color: #666;" data-key="about_p2">
+                公司通过 IATF 16949 质量体系认证，产品远销中东、东南亚等地区，为多家知名整车厂提供一级配套服务。
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== 联系我们 ===== -->
+    <section id="contact" style="background: #f8f9fc; padding: 60px 0;">
+        <div class="container" style="text-align: center; max-width: 600px;">
+            <h2 class="section-title" data-key="contact_title">联系我们</h2>
+            <p style="color: #555; margin-bottom: 24px;" data-key="contact_sub">欢迎OEM客户垂询，可提供样品和技术资料</p>
+            <div style="background: #fff; border-radius: 12px; padding: 30px; border: 1px solid #e9ecef; text-align: left;">
+                <p style="padding: 6px 0;"><strong>📧 邮箱：</strong> info@yunkangpower.com</p>
+                <p style="padding: 6px 0;"><strong>📞 电话：</strong> +86 138-xxxx-xxxx</p>
+                <p style="padding: 6px 0;"><strong>📱 WhatsApp：</strong> +86 138-xxxx-xxxx</p>
+                <p style="padding: 6px 0;"><strong data-key="contact_addr_label">📍 地址：</strong> <span data-key="contact_addr">中国 · 湖北省襄阳市襄州区叶店路38号</span></p>
+            </div>
+            <div style="margin-top: 20px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <a class="btn-primary" data-key="contact_btn1" onclick="alert('询盘表单 - 即将上线')">发送询盘</a>
+                <!-- ===== 下载按钮：点击弹出公众号弹窗 ===== -->
+                <a class="btn-outline" style="border-color:#0a1628; color:#0a1628; cursor:pointer;" data-key="contact_btn2" onclick="openModal()">下载产品手册</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 页脚 ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 data-key="footer_company">云康动力科技有限公司</h4>
+                    <p style="font-size: 14px; color: #888;" data-key="footer_slogan">汽车电源与ABS系统专业供应商</p>
+                </div>
+                <div>
+                    <h4 data-key="footer_products">产品</h4>
+                    <a data-key="footer_pwr" onclick="scrollToSection('products')">电源解决方案</a>
+                    <a data-key="footer_abs" onclick="scrollToSection('products')">ABS防抱死制动系统</a>
+                    <a data-key="footer_esc" onclick="alert('ESC集成系统 - 即将上线')">ESC集成系统</a>
+                </div>
+                <div>
+                    <h4 data-key="footer_links">快速链接</h4>
+                    <a data-key="footer_about" onclick="scrollToSection('about')">关于我们</a>
+                    <a data-key="footer_contact" onclick="scrollToSection('contact')">联系我们</a>
+                    <a data-key="footer_download" onclick="openModal()">资料下载</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <span data-key="footer_copyright">© 2026 云康动力科技有限公司 版权所有</span> | <span data-key="footer_lang">网站语言：中文 · English · عربي</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- ===== 公众号弹窗 ===== -->
+    <div class="modal-overlay" id="downloadModal" onclick="closeModalOutside(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="qr-icon">📱</div>
+            <h3 data-key="modal_title">关注微信公众号</h3>
+            <p class="modal-desc" data-key="modal_desc">扫码关注后，在对话框发送 <strong>"产品手册"</strong> 即可获取下载链接</p>
+
+            <!-- 公众号二维码 -->
+            <div class="qr-placeholder" style="border: none; background: transparent; padding: 0;">
+                <img src="images/wechat-qr.png" alt="公众号二维码" style="width:160px; height:160px; border-radius:12px; object-fit:cover;" />
+            </div>
+
+            <div class="modal-hint">
+                💡 <span data-key="modal_hint">已关注的用户，在公众号内回复 <strong>"产品手册"</strong> 即可获取</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== 多语言数据 ===== -->
+    <script>
+        // 所有语言包
+        const translations = {
+            zh: {
+                nav_products: '产品',
+                nav_apps: '应用场景',
+                nav_about: '关于我们',
+                nav_contact: '联系我们',
+                hero_title1: '汽车电源',
+                hero_title2: '与 ABS系统',
+                hero_title3: '解决方案',
+                hero_desc: '为中东 · 东南亚OEM客户提供高可靠性汽车电子零部件，IATF 16949认证，高温适应性设计',
+                hero_btn1: '查看产品',
+                hero_btn2: '获取报价',
+                cert1: '汽车行业质量管理体系',
+                cert2: '环境管理体系',
+                cert3: 'ABS制动系统认证',
+                cert4: '功能安全标准',
+                products_title: '我们的产品',
+                products_sub: '为全球OEM客户提供高性能汽车电子零部件',
+                pwr_title: '电源解决方案',
+                pwr_sub: '车载DC-DC转换器 · 车载充电机(OBC) · 工业电源模块',
+                pwr_li1: '工作温度：-40°C ~ 125°C',
+                pwr_li2: '转换效率高达 95%',
+                pwr_li3: '符合 ISO 26262 功能安全标准',
+                pwr_li4: '适用于乘用车/商用车/新能源车',
+                pwr_btn: '查看详情 →',
+                abs_title: 'ABS防抱死制动系统',
+                abs_sub: '乘用车ABS · 商用车ABS · ABS+ESC集成系统',
+                abs_li1: '响应时间 ≤ 10ms',
+                abs_li2: '支持 CAN 总线诊断接口',
+                abs_li3: '符合 ECE R90 认证',
+                abs_li4: '适配多种车型平台',
+                abs_btn: '查看详情 →',
+                app_title: '应用场景',
+                app_sub: '云康动力电源与ABS系统在各类车型中的协同方案',
+                app1_title: '🚗 乘用车',
+                app1_desc: '为轿车、SUV提供高集成度电源与ABS方案，适配主流车型平台',
+                app1_link: '了解更多 →',
+                app2_title: '🚛 商用车',
+                app2_desc: '专为重卡、客车设计的耐久性方案，适应恶劣路况与高温环境',
+                app2_link: '了解更多 →',
+                app3_title: '🔋 新能源车',
+                app3_desc: '电源产品与再生制动ABS的深度集成，助力绿色出行',
+                app3_link: '了解更多 →',
+                about_title: '关于云康动力',
+                about_p1: '云康动力科技有限公司专注于汽车电源系统与主动安全零部件的研发、制造与销售。',
+                about_p2: '公司通过 IATF 16949 质量体系认证，产品远销中东、东南亚等地区，为多家知名整车厂提供一级配套服务。',
+                contact_title: '联系我们',
+                contact_sub: '欢迎OEM客户垂询，可提供样品和技术资料',
+                contact_addr_label: '📍 地址：',
+                contact_addr: '中国 · 湖北省襄阳市襄州区叶店路38号',
+                contact_btn1: '发送询盘',
+                contact_btn2: '下载产品手册',
+                footer_company: '云康动力科技有限公司',
+                footer_slogan: '汽车电源与ABS系统专业供应商',
+                footer_products: '产品',
+                footer_pwr: '电源解决方案',
+                footer_abs: 'ABS防抱死制动系统',
+                footer_esc: 'ESC集成系统',
+                footer_links: '快速链接',
+                footer_about: '关于我们',
+                footer_contact: '联系我们',
+                footer_download: '资料下载',
+                footer_copyright: '© 2026 云康动力科技有限公司 版权所有',
+                footer_lang: '网站语言：中文 · English · عربي',
+                // 弹窗
+                modal_title: '关注微信公众号',
+                modal_desc: '扫码关注后，在对话框发送 <strong>"产品手册"</strong> 即可获取下载链接',
+                modal_qr_placeholder: '公众号二维码',
+                modal_hint: '已关注的用户，在公众号内回复 <strong>"产品手册"</strong> 即可获取'
+            },
+            en: {
+                nav_products: 'Products',
+                nav_apps: 'Applications',
+                nav_about: 'About Us',
+                nav_contact: 'Contact',
+                hero_title1: 'Automotive Power',
+                hero_title2: '& ABS System',
+                hero_title3: 'Solutions',
+                hero_desc: 'High-reliability automotive electronics for OEM customers in Middle East & Southeast Asia, IATF 16949 certified, high-temperature resistant design',
+                hero_btn1: 'View Products',
+                hero_btn2: 'Get Quote',
+                cert1: 'Automotive Quality Management',
+                cert2: 'Environmental Management',
+                cert3: 'ABS Brake System Certification',
+                cert4: 'Functional Safety Standard',
+                products_title: 'Our Products',
+                products_sub: 'High-performance automotive electronics for global OEM customers',
+                pwr_title: 'Power Supply Solutions',
+                pwr_sub: 'DC-DC Converter · OBC · Industrial Power Module',
+                pwr_li1: 'Operating Temp: -40°C ~ 125°C',
+                pwr_li2: 'Efficiency up to 95%',
+                pwr_li3: 'ISO 26262 Functional Safety Compliant',
+                pwr_li4: 'For Passenger / Commercial / NEV',
+                pwr_btn: 'View Details →',
+                abs_title: 'ABS Anti-lock Braking System',
+                abs_sub: 'Passenger ABS · Commercial ABS · ABS+ESC Integrated',
+                abs_li1: 'Response Time ≤ 10ms',
+                abs_li2: 'CAN Bus Diagnostic Interface',
+                abs_li3: 'ECE R90 Certified',
+                abs_li4: 'Compatible with Multiple Vehicle Platforms',
+                abs_btn: 'View Details →',
+                app_title: 'Applications',
+                app_sub: 'Yunkang Power & ABS integrated solutions for various vehicle types',
+                app1_title: '🚗 Passenger Vehicles',
+                app1_desc: 'Highly integrated power & ABS solutions for sedans and SUVs, compatible with mainstream platforms',
+                app1_link: 'Learn More →',
+                app2_title: '🚛 Commercial Vehicles',
+                app2_desc: 'Durable solutions for heavy trucks and buses, designed for harsh roads and high-temp environments',
+                app2_link: 'Learn More →',
+                app3_title: '🔋 New Energy Vehicles',
+                app3_desc: 'Deep integration of power supply and regenerative braking ABS for green mobility',
+                app3_link: 'Learn More →',
+                about_title: 'About Yunkang Power',
+                about_p1: 'Yunkang Power Technology Co., Ltd. specializes in R&D, manufacturing and sales of automotive power systems and active safety components.',
+                about_p2: 'Certified with IATF 16949, our products are exported to Middle East, Southeast Asia and beyond, serving as Tier 1 supplier for multiple renowned OEMs.',
+                contact_title: 'Contact Us',
+                contact_sub: 'OEM customers welcome! Samples and technical documents available.',
+                contact_addr_label: '📍 Address:',
+                contact_addr: 'China · No.38 Yedian Road, Xiangzhou District, Xiangyang, Hubei',
+                contact_btn1: 'Send Inquiry',
+                contact_btn2: 'Download Brochure',
+                footer_company: 'Yunkang Power Technology Co., Ltd.',
+                footer_slogan: 'Automotive Power & ABS System Specialist',
+                footer_products: 'Products',
+                footer_pwr: 'Power Supply Solutions',
+                footer_abs: 'ABS Braking System',
+                footer_esc: 'ESC Integrated System',
+                footer_links: 'Quick Links',
+                footer_about: 'About Us',
+                footer_contact: 'Contact Us',
+                footer_download: 'Downloads',
+                footer_copyright: '© 2026 Yunkang Power Technology Co., Ltd. All Rights Reserved',
+                footer_lang: 'Languages: Chinese · English · عربي',
+                modal_title: 'Follow WeChat Official Account',
+                modal_desc: 'Scan to follow, then send <strong>"Brochure"</strong> in chat to get download link',
+                modal_qr_placeholder: 'WeChat QR Code',
+                modal_hint: 'Already following? Reply <strong>"Brochure"</strong> in the official account'
+            },
+            ar: {
+                nav_products: 'المنتجات',
+                nav_apps: 'التطبيقات',
+                nav_about: 'من نحن',
+                nav_contact: 'اتصل بنا',
+                hero_title1: 'مزود الطاقة',
+                hero_title2: 'ونظام ABS',
+                hero_title3: 'حلول متكاملة',
+                hero_desc: 'إلكترونيات سيارات عالية الموثوقية لعملاء OEM في الشرق الأوسط وجنوب شرق آسيا، حاصلة على شهادة IATF 16949، تصميم مقاوم لدرجات الحرارة العالية',
+                hero_btn1: 'عرض المنتجات',
+                hero_btn2: 'طلب عرض سعر',
+                cert1: 'إدارة جودة السيارات',
+                cert2: 'إدارة البيئة',
+                cert3: 'شهادة نظام مكابح ABS',
+                cert4: 'معيار السلامة الوظيفية',
+                products_title: 'منتجاتنا',
+                products_sub: 'إلكترونيات سيارات عالية الأداء لعملاء OEM العالميين',
+                pwr_title: 'حلول مزود الطاقة',
+                pwr_sub: 'محول DC-DC · شاحن مركبة · وحدة طاقة صناعية',
+                pwr_li1: 'درجة حرارة التشغيل: -40°C ~ 125°C',
+                pwr_li2: 'كفاءة تصل إلى 95%',
+                pwr_li3: 'متوافق مع معيار ISO 26262 للسلامة الوظيفية',
+                pwr_li4: 'للسيارات / التجارية / الكهربائية الجديدة',
+                pwr_btn: 'عرض التفاصيل →',
+                abs_title: 'نظام مكابح ABS',
+                abs_sub: 'ABS للسيارات · ABS التجارية · نظام ABS+ESC المتكامل',
+                abs_li1: 'وقت الاستجابة ≤ 10 مللي ثانية',
+                abs_li2: 'واجهة تشخيص CAN Bus',
+                abs_li3: 'حاصل على شهادة ECE R90',
+                abs_li4: 'متوافق مع منصات سيارات متعددة',
+                abs_btn: 'عرض التفاصيل →',
+                app_title: 'التطبيقات',
+                app_sub: 'حلول متكاملة من يونكانغ للطاقة وأنظمة ABS لمختلف أنواع السيارات',
+                app1_title: '🚗 سيارات الركاب',
+                app1_desc: 'حلول طاقة وABS عالية التكامل للسيارات وسيارات الدفع الرباعي، متوافقة مع المنصات الرئيسية',
+                app1_link: 'اعرف المزيد →',
+                app2_title: '🚛 المركبات التجارية',
+                app2_desc: 'حلول متينة للشاحنات الثقيلة والحافلات، مصممة للطرق الوعرة وبيئات درجات الحرارة العالية',
+                app2_link: 'اعرف المزيد →',
+                app3_title: '🔋 سيارات الطاقة الجديدة',
+                app3_desc: 'تكامل عميق بين مزود الطاقة ومكابح ABS المتجددة لدعم التنقل الأخضر',
+                app3_link: 'اعرف المزيد →',
+                about_title: 'عن يونكانغ للطاقة',
+                about_p1: 'تتخصص شركة يونكانغ لتكنولوجيا الطاقة المحدودة في البحث والتطوير والتصنيع والمبيعات لأنظمة طاقة السيارات ومكونات السلامة النشطة.',
+                about_p2: 'حاصلة على شهادة IATF 16949، يتم تصدير منتجاتنا إلى الشرق الأوسط وجنوب شرق آسيا وما وراءها، ونعمل كمورد من المستوى الأول للعديد من مصنعي السيارات المعروفين.',
+                contact_title: 'اتصل بنا',
+                contact_sub: 'نرحب بعملاء OEM! تتوفر العينات والوثائق الفنية.',
+                contact_addr_label: '📍 العنوان:',
+                contact_addr: 'الصين · رقم 38 طريق يديان، منطقة شيانغتشو، شيانغيانغ، خوبي',
+                contact_btn1: 'إرسال استفسار',
+                contact_btn2: 'تحميل الكتيب',
+                footer_company: 'شركة يونكانغ لتكنولوجيا الطاقة المحدودة',
+                footer_slogan: 'متخصص في طاقة السيارات وأنظمة ABS',
+                footer_products: 'المنتجات',
+                footer_pwr: 'حلول مزود الطاقة',
+                footer_abs: 'نظام مكابح ABS',
+                footer_esc: 'نظام ESC المتكامل',
+                footer_links: 'روابط سريعة',
+                footer_about: 'من نحن',
+                footer_contact: 'اتصل بنا',
+                footer_download: 'التحميلات',
+                footer_copyright: '© 2026 شركة يونكانغ لتكنولوجيا الطاقة المحدودة. جميع الحقوق محفوظة',
+                footer_lang: 'اللغات: العربية · English · 中文',
+                modal_title: 'تابع حساب WeChat الرسمي',
+                modal_desc: 'امسح للمتابعة، ثم أرسل <strong>"الكتيب"</strong> في الدردشة للحصول على رابط التحميل',
+                modal_qr_placeholder: 'رمز WeChat QR',
+                modal_hint: 'متابع بالفعل؟ رد <strong>"الكتيب"</strong> في الحساب الرسمي'
+            }
+        };
+
+        // 当前语言
+        let currentLang = 'zh';
+
+        // ===== 切换语言函数 =====
+        function switchLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferred_lang', lang);
+
+            const buttons = document.querySelectorAll('.lang-switcher button');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                const btnText = btn.textContent.trim();
+                if ((lang === 'zh' && btnText === '中') ||
+                    (lang === 'en' && btnText === 'EN') ||
+                    (lang === 'ar' && btnText === 'عربي')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key] !== undefined) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.documentElement.lang = lang;
+
+            if (lang === 'ar') {
+                document.documentElement.dir = 'rtl';
+                document.querySelectorAll('.product-card ul li').forEach(li => {
+                    li.style.paddingLeft = '0';
+                    li.style.paddingRight = '24px';
+                });
+                let style = document.getElementById('rtl-style');
+                if (!style) {
+                    style = document.createElement('style');
+                    style.id = 'rtl-style';
+                    document.head.appendChild(style);
+                }
+                style.textContent = `
+                    .product-card ul li::before { left: auto; right: 0; }
+                    .product-card ul li { padding-left: 0; padding-right: 24px; }
+                `;
+            } else {
+                document.documentElement.dir = 'ltr';
+                const oldStyle = document.getElementById('rtl-style');
+                if (oldStyle) oldStyle.remove();
+                document.querySelectorAll('.product-card ul li').forEach(li => {
+                    li.style.paddingLeft = '24px';
+                    li.style.paddingRight = '0';
+                });
+            }
+        }
+
+        // ===== 弹窗控制 =====
+        function openModal() {
+            document.getElementById('downloadModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('downloadModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closeModalOutside(event) {
+            if (event.target === document.getElementById('downloadModal')) {
+                closeModal();
+            }
+        }
+
+        // ESC键关闭弹窗
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // ===== 滚动到指定区域 =====
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                const offset = 80;
+                const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            }
+        }
+
+        // ===== 页面加载时恢复语言 =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferred_lang') || 'zh';
+            switchLang(savedLang);
+        });
+    </script>
+
+</body>
+</html>
