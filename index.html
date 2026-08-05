@@ -724,24 +724,34 @@
     </footer>
 
     <!-- ============================================================ -->
-    <!-- ===== 公众号弹窗 ===== -->
-    <div class="modal-overlay" id="downloadModal" onclick="closeModalOutside(event)">
-        <div class="modal-box">
-            <button class="modal-close" onclick="closeModal()">✕</button>
-            <div class="qr-icon">📱</div>
-            <h3 data-key="modal_title">关注微信公众号</h3>
-            <p class="modal-desc" data-key="modal_desc">扫码关注后，在对话框发送 <strong>"产品手册"</strong> 即可获取下载链接</p>
+   <!-- 公众号弹窗 -->
+<div class="modal-overlay" id="downloadModal" onclick="closeModalOutside(event)">
+    <div class="modal-box">
+        <!-- 关闭按钮 -->
+        <button class="modal-close" onclick="closeModal()">✕</button>
 
-            <!-- 公众号二维码 -->
-            <div class="qr-placeholder" style="border: none; background: transparent; padding: 0;">
-                <img src="wechat-qr.png" alt="公众号二维码" style="width:160px; height:160px; border-radius:12px; object-fit:cover;" />
-            </div>
+        <!-- 图标 -->
+        <div class="qr-icon">📱</div>
 
-            <div class="modal-hint">
-                💡 <span data-key="modal_hint">已关注的用户，在公众号内回复 <strong>"产品手册"</strong> 即可获取</span>
-            </div>
+        <!-- 标题 -->
+        <h3 data-key="modal_title">关注微信公众号</h3>
+
+        <!-- 说明文字 -->
+        <p class="modal-desc" data-key="modal_desc">
+            长按二维码保存到相册，<br/>打开微信「扫一扫」从相册选择即可关注
+        </p>
+
+        <!-- 公众号二维码 -->
+        <div class="qr-placeholder" style="border: none; background: transparent; padding: 0;">
+            <img src="wechat-qr.png" alt="公众号二维码" style="width:160px; height:160px; border-radius:12px; object-fit:cover;" />
+        </div>
+
+        <!-- 底部提示 -->
+        <div class="modal-hint">
+            💡 <span data-key="modal_hint">已关注的用户，在公众号内回复 <strong>"产品手册"</strong> 即可获取下载链接</span>
         </div>
     </div>
+</div>
 
     <!-- ============================================================ -->
     <!-- ===== 多语言数据 ===== -->
